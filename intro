@@ -67,4 +67,10 @@ git merge --no-ff branch1  //保留合并的痕迹
 
 git log --graph --pretty=noeline --abbrev-commit //合并的视图
 
+21. git stash //保存现场
+    git stash list //查看stash里面的内容
+    git stash pop //恢复现场，并删除stash里的副本
+
+    git stash apply stash@{序号} //恢复现场，但不删除stash里的副本
+    git stash drop //删除stash里的副本
 
