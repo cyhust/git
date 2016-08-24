@@ -40,9 +40,16 @@ ssh-keygen -t rsa -C "youremail@example.com"
 
 14. login your GitHub, and new a ssh key, then copy ".ssh/id_rsa.pub" from the local and paste it into the Key in the remote
 
-15. connect local master with remote master
+15. connect local master with remote master, and push all the contents of your local master to the remote maste
 git remote add origin git@github.com:yourGitHubAccount/GitHubRepositoryName
-git push -u origin master // push all the contents of your local master to the remote
+git push -u origin master
 
-16. git push origin master // push only the modification to the remote
+16. push only the modification to the remote master "origin"
+git push origin master
+
+17. clone a repository from the remote origin
+git clone git@github.com:GitHubAccount/GitHubRepository
+
+18. GitHub supports many protocals, default is "git://", it uses ssh to connect. GitHub also uses "https://", but it needs to input password every time.
+
 
