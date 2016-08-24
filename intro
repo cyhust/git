@@ -1,0 +1,48 @@
+1. new a local directory 
+mkdir mygit
+
+2. initial current directory as a repository
+git init
+
+3. edit a file test.txt, and add it to the stage(暂存区)
+git add test.txt
+
+4. put the file into the master(本地库)
+git commit -m "comment_string"
+
+5. check the status of git
+git status
+
+6. view the history of git
+git log
+
+7. view the history of the command
+git reflog
+
+8. reset the file to last version, HEAD表示当前版本，HEAD^表示上一版本，HEAD^^表示倒数第二个版本，HEAD-100表示倒数第100个版本，用XXXXXXX表示版本号
+git reset --hard HEAD^ 
+git reset --hard XXXXXXX
+
+9. compare the difference between workspace and repository
+git diff HEAD -- filename
+
+10. undo the modification in the workspace, and keep it the same as the status of last command "git commit" or "git add"
+git checkout -- filename
+
+11. undo the modification in the stage(暂存区), and put the modification into the workspace
+git reset HEAD filename
+
+12. remove the file from the repository
+git rm filename
+
+13. new ssh key of your current repository
+ssh-keygen -t rsa -C "youremail@example.com"
+
+14. login your GitHub, and new a ssh key, then copy ".ssh/id_rsa.pub" from the local and paste it into the Key in the remote
+
+15. connect local master with remote master
+git remote add origin git@github.com:yourGitHubAccount/GitHubRepositoryName
+git push -u origin master // push all the contents of your local master to the remote
+
+16. git push origin master // push only the modification to the remote
+
