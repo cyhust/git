@@ -33,7 +33,8 @@ git checkout -- filename
 git reset HEAD filename
 
 12. remove the file from the repository
-git rm filename
+git rm filename   //这句话跟git add filename一样，只在暂存区操作，还要commit操作才能将删除操作提交到branch区
+git commit -m "delete file"
 
 13. new ssh key of your current repository
 ssh-keygen -t rsa -C "youremail@example.com"
@@ -58,4 +59,12 @@ git clone git@github.com:GitHubAccount/GitHubRepository
     创建+切换分支：git checkout -b <name>
     合并某分支到当前分支：git merge <name>
     删除分支：git branch -d <name>
+
+20. 如果在branch1上修改文件test，然后提交git add/git commit，接着切换分支到branch2，又修改了文件test（这里你看不到branch1对test做出的修改），然后你也提交了git add/git commit。此时你若合并branch1，git merge branch1，就会失败，因此branch1和branch2对test做出了不同的修改，此时你要手动修改test文件，再次提交git add/git commit，然后branch1和branch2里的test文件统一了，都变为了最新的版本。
+
+git merge branch1   //看不出合并的痕迹
+git merge --no-ff branch1  //保留合并的痕迹
+
+git log --graph --pretty=noeline --abbrev-commit //合并的视图
+
 
